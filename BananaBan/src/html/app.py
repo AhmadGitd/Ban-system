@@ -1,11 +1,6 @@
-<<<<<<< HEAD
 import collections
 import os
 import re
-=======
-<<<<<<< Updated upstream
-import os, jsonify
->>>>>>> 1be38031174610adad7f46c1bfb84216a4cec70e
 from datetime import datetime
 from dis import dis
 from hashlib import scrypt
@@ -24,12 +19,6 @@ from pymongo import MongoClient
 #                            FLASK Setup                                   #
 #                                                                          #
 ############################################################################
-=======
-from codecs import StreamReaderWriter
-import os, datetime
-from pickle import TRUE
-from flask import Flask, render_template, request, json, send_from_directory, url_for
->>>>>>> Stashed changes
 
 app = Flask(__name__, static_url_path='/static')
 app.config['JSONIFY_PRETTYPRINT_REGULAR'] = True
@@ -52,7 +41,6 @@ def Favicon():
 def IsUserLoggedIn():
     return "email" in session
 
-<<<<<<< HEAD
 def UserExists(db, field, value):
     return GetFindUser(db, {field: re.compile('^' + value + '$', re.IGNORECASE)}) is not None
 
@@ -85,15 +73,6 @@ def Index():
             newEmail = userData["email"]
             return render_template('loggedin.html', email=newEmail), {"Refresh": "3; url=login"}
     return render_template('regis.html')
-=======
-#@app.route('/')
-#def index():
-  #  return render_template('index.html')
-
-<<<<<<< Updated upstream
-# @app.route('/')
-# def landing_page():
->>>>>>> 1be38031174610adad7f46c1bfb84216a4cec70e
 
 @app.route('/login',  methods=["POST", "GET"])
 def Login():
@@ -230,38 +209,15 @@ def FindUserApi():
    
 
 @app.route('/api/v1/banuser', methods=['POST'])
-<<<<<<< HEAD
 def BanUserApi():
    
     db = GetDb()
     userInfo = request.get_json()
     formatted = json.loads(userInfo)
     AddBannedUser(db, formatted) 
-=======
-def ban_user_api():
-    data = request.get_json(cache=True)
-    print(data)
-=======
-#@app.route('/', methods=['POST'])
-#def my_form_post():
-    #text = request.form['textbox']
-    #processed_text = text.upper()
-    #return print ('ddasd')
-    #return render_template('index.html', value=processed_text)
-
-#@app.route('/api/v1/postinfo', methods=['POST'])
-#def send():
-  #  data = request.get_json(cache=True)
-   
-   # print(data)
-    # DoSomethingWithData(data)
-    #return data,"data collected"#jsonify(data)
->>>>>>> Stashed changes
->>>>>>> 1be38031174610adad7f46c1bfb84216a4cec70e
     
     return "User er banned nu "
 
-<<<<<<< HEAD
 @app.route('/api/v1/delete', methods=['POST'])
 def UnbanUserApi():    
     db = GetDb()
@@ -284,56 +240,3 @@ def UnbanUserApi():
 
 if __name__ == "__main__":
     app.run(host="127.0.0.1", port=80, debug=True)
-=======
-############################################################################
-#                                                                          #
-#                            DB Functions                                  #
-#                                                                          #
-############################################################################   
- 
-def get_db():
-    client = MongoClient('localhost:27017')
-    db = client.BananaBanDB
-    print("\n[ * ] Connected to DB\n")
-    return db
-
-<<<<<<< Updated upstream
-def add_banned_user(db, user_info):
-    db.banned_users.insert_one(user_info)
-    print("\n[ + ] User banned!\n")
-    #return "[ + ] User banned!"
-    
-def get_banned_user(db):
-    return db.banned_users.find_one()
-=======
-#def DoSomethingWithData(data):
-    #return data
-
-#def userExist():
-    #while TRUE:
-     #   DiscordName = 
-      #  SteamID =
-      #if not DiscordName or not SteamID:
-       #     print ("This username dosent exist.")
-        #else DiscordName or SteamID in MongolDB
-         #   print.mongolDB.info()
-
-#def UserExist():
-    #for discordname in ('bar', 'foo'):
-     #   cursor.execute("SELECT rowid FROM compentents WHERE discordname = ?", (discordname,))
-      #  data=cursor.fetchall()
-       # if len(data)==0:
-        #    print('This user cant be find %s'%discordname)
-        #else:
-         #   print('User %s found with the info %s'%(discordname,','.join(map(str, next(zip(*data))))))
-
-
-# while True:
-#    print.Info()
-#Var discordName
-#Var SteamID
-#var datetime.date
-#var string reason 
-#var server
->>>>>>> Stashed changes
->>>>>>> 1be38031174610adad7f46c1bfb84216a4cec70e

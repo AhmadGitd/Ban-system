@@ -1,0 +1,62 @@
+<html>
+   <title>BOT API</title>
+   <style>
+      * {
+         font-family: 'Pixel-7';
+         zoom:110%;
+      }
+      body {
+         background-color: black;
+         color: white;
+      }
+      div.a {
+         text-align: left;
+      }
+      .center-screen {
+         position: fixed; 
+         top: 42%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+         text-align: center;
+      }
+      .undercenter-screen {
+         position: fixed; 
+         top: 54%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+         text-align: center;
+      }
+      .username {
+         position: fixed; 
+         top: 200%;
+         left: 47%;
+         transform: translate(-50%, -50%);
+         text-align: center;
+      }
+      @font-face {
+        font-family: 'Pixel-7';
+        src: url('static/fonts/Pixel-7.woff') format('woff');
+      }
+   </style>
+   <body>
+      
+      <div class="center-screen">
+         <center>
+            <h1>Find <span style="color: rgb(241, 81, 116);">banned</span> <span style="color: rgb(106, 252, 137);">USER</span> </h1>
+            <form method="POST">
+               <input name="username">
+               <input type="submit" >
+           </form>
+         </center>
+      </div>
+      <div class="undercenter-screen">
+      {% if banned_true == True %}
+      <h3>User <span style="color: rgb(241, 81, 116);">exist in our</span> <span style="color: rgb(106, 252, 137);">SYSTEN</span> </h3>
+      {% endif %}
+      <a class="username" style="color: rgb(106, 252, 137);" >{{value}}</a> 
+      
+   </div>
+   
+     
+      
+   </body>

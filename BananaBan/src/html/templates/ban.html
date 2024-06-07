@@ -1,0 +1,90 @@
+<html>
+   <title>BOT API</title>
+   <style>
+      * {
+         font-family: 'Pixel-7';
+         zoom:110%;
+      }
+      body {
+         background-color: black;
+         color: white;
+      }
+      div.a {
+         text-align: left;
+      }
+      .center-screen {
+         position: fixed; 
+         top: 42%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+         text-align: center;
+      }
+      .discord_green {
+         position: fixed; 
+         top: 75%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+         text-align: center;
+      }
+      .discordid {
+         position: fixed; 
+         top: 78%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+         text-align: center;
+      }
+      .banned_user_red {
+         position: fixed; 
+         top: 81%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+         text-align: center;
+      }
+      #baninfo {
+         width:90%;
+         background-color: black;
+         border: 1px solid white;
+         margin: 0 -10px;
+         padding: 1em;
+         /*-webkit-border-radius: px;*/
+         text-align: center;
+     }
+     
+     input[type="text"], textarea[type="text"] {
+         text-align:center;
+         display: block;
+         margin: 0 auto 0em auto;
+         width: 90%;  /*280px;*/
+         border: 1px solid #818181;
+       /*  -moz-border-radius: 1px;
+         -webkit-border-radius: 1px; */
+         padding: 0px;
+     }
+     
+
+      @font-face {
+        font-family: 'Pixel-7';
+        src: url('static/fonts/Pixel-7.woff') format('woff');
+      }
+   </style>
+   <body>
+      
+      <div class="center-screen">
+         <center>
+            <h1><span style="color: rgb(241, 81, 116);">Ban</span> A <span style="color: rgb(106, 252, 137);">User</span> </h1>
+            <form id="baninfo" name="baninfo" name="baninfo" method="POST">
+               Steam ID: <input type="text" name="steamID" placeholder="STEAM_X:Y:Z" required><br>
+               Discord ID: <input type="text" name="discordID" placeholder="username#0000" required><br>
+               Reson: <textarea type="text" name="reason" rows="3" cols="21" placeholder="Reson to why user was banned.." required></textarea> <br>
+               Server: <input type="text" name="server" placeholder="server banned from.." required></textarea><br>
+               <input type="submit">
+           </form>
+         </center>
+      </div> 
+      {% if banned_true == True %}
+         <a class="discord_green" style="color: rgb(106, 252, 137);;">Discord user</a><br>
+         <a class="discordid"> {{value}} </a><br>
+         <a class="banned_user_red" style="color: rgb(241, 81, 116);">is Banned!</a><br>
+       {% endif %}
+       <a class="discordid"> {{value}} </a><br>
+   </body>

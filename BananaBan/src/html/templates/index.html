@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %} BananaBanBot {% endblock %}
+
+{% block content %}
+   
+<body>
+      
+      <div class="center-screen">
+         <center>
+            <h1>Welcome to <span style="color: rgb(106, 252, 137);">BananaBanBot</span> </h1>
+               <button class="btn red" type="submit"onclick="window.location.href='{{ url_for( 'BanUser') }}';">Ban user</button>
+               <button class="btn green" type="submit"onclick="window.location.href='{{ url_for( 'FindUser') }}';">Find user</button>
+         </center>
+      </div> 
+      <a class="username" style="color: rgb(106, 252, 137);">{{value}}</a>  
+      
+</body>
+{% endblock %}

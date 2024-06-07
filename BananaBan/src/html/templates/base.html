@@ -1,0 +1,85 @@
+<html>
+   <title>{% block title %}{%endblock %}</title>
+   <style>
+      * {
+         font-family: 'Pixel-7';
+         zoom:110%;
+      }
+      body {
+         background-color: black;
+         color: white;
+      }
+      div.a {
+         text-align: left;
+      }
+      .btn {
+         border: 2px solid rgb(241, 81, 116);
+         background-color: black;
+         color: rgb(241, 81, 116);
+         padding: 14px 28px;
+         font-size: 16px;
+         cursor: pointer;
+       }
+       
+       /* red */
+       .red {
+         border-color: rgb(241, 81, 116);
+         color: rgb(241, 81, 116);
+       }
+       
+       .red:hover {
+         background-color: rgb(241, 81, 116);
+         color: black;
+       }
+
+       /* green */
+       .green {
+         border-color: rgb(106, 252, 137);
+         color: rgb(106, 252, 137);
+       }
+       
+       .green:hover {
+         background-color: rgb(106, 252, 137);
+         color: black;
+       }
+
+
+      .center-screen {
+         position: fixed; 
+         top: 42%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+         text-align: center;
+      }
+      .username {
+         position: fixed; 
+         top: 60%;
+         left: 47%;
+         transform: translate(-50%, -50%);
+         text-align: center;
+      }
+      @font-face {
+        font-family: 'Pixel-7';
+        src: url('static/fonts/Pixel-7.woff') format('woff');
+      }
+     
+   </style>
+   
+   <body>
+    <nav class="navbar navbar-light" style="background-color: #0b1218;">
+        <a class="navbar-brand" href="#">Registrain form</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="/">Register <span class="sr-only">(current)</span></a>
+                <a class="nav-item-nav-link" href="loggedin">Login</a>
+                <a class="nav-item-nav-link" href="loggedout">logout</a>
+            </div>
+        </div>
+    </nav>
+      {% block content %}{% endblock %}
+   </body>
+</html>
